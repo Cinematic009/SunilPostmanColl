@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "b8419a0c-e3b0-464b-bba4-3f4837874467",
+		"name": "GoRestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23634371",
+		"_collection_link": "https://lively-water-319190.postman.co/workspace/PractiseAPI~1f51d6dc-5263-4076-9f7c-f29c7cf4b58f/collection/23634371-b8419a0c-e3b0-464b-bba4-3f4837874467?action=share&source=collection_link&creator=23634371"
+	},
+	"item": [
+		{
+			"name": "GetData",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{tokenID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}public/v2/users",
+					"host": [
+						"{{baseURL}}public"
+					],
+					"path": [
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIngleUserData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users/7357323",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users",
+						"7357323"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTtheData",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const rawbody = pm.request.body.raw;\r",
+							"\r",
+							"//JSON to JS Object\r",
+							"\r",
+							"const requestBody = JSON.parse(rawbody);\r",
+							"const emailid =requestBody.email;\r",
+							"console.log(emailid);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer d3d6a39ffe3179384818d001723ae216c9774c7b938573196f03795bcce530d5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"name\": \"{{$randomFirstName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"gender\": \"Male\",\r\n    \"status\": \"active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the data",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c76cc5d26b72924527a4e9ad64f4bd9592fcc242020bf505aa1ddcf3eca82574",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"Aunil Patil rao\",\r\n    \"email\": \"Anilpatil123@gmail.com\",\r\n    \"gender\": \"male\",\r\n    \"status\": \"Inactive\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users/7207015",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users",
+						"7207015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c76cc5d26b72924527a4e9ad64f4bd9592fcc242020bf505aa1ddcf3eca82574",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 7207015,\r\n    \"name\": \"Aunil Patil rao\",\r\n    \"email\": \"Anilpatil123@gmail.com\",\r\n    \"gender\": \"male\",\r\n    \"status\": \"active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gorest.co.in/public/v2/users/7207015",
+					"protocol": "https",
+					"host": [
+						"gorest",
+						"co",
+						"in"
+					],
+					"path": [
+						"public",
+						"v2",
+						"users",
+						"7207015"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "tokenID",
+			"value": "{{vault:tokenID}}",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "https://gorest.co.in/",
+			"type": "string"
+		}
+	]
+}
