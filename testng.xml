@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="FrameworkAPiSuite" verbose="3">
+
+  <test  name="Create user test">
+    <classes>
+       <class name="com.qa.api.test.CreateUserTest"/>
+    </classes>
+  </test> 
+  
+  
+
+ <test  name="get user test">
+    <classes>
+       <class name="com.qa.api.test.GetUserTest"/>
+    </classes>
+  </test> 
+  
+  
+ <test  name="Put user test">
+    <classes>
+       <class name="com.qa.api.test.PUTUserTest"/>
+    </classes>
+  </test> 
+  
+   <test  name="Patch user test">
+    <classes>
+       <class name="com.qa.api.test.PATCHuserTest"/>
+    </classes>
+  </test> 
+  
+      
+ <test  name="Delete user test">
+    <classes>
+       <class name="com.qa.api.test.DeleteUserTest"/>
+    </classes>
+  </test> 
+        
+        
+ 
+  
+</suite> <!-- FrameworkAPiSuite -->
